@@ -3,8 +3,8 @@ import { Box } from "@chakra-ui/react";
 import { ChatState } from "../../../contexts/ChatProvider";
 
 
-const UserBadgeItem = ({ handleFunction}) => {
-  const {user} = ChatState()
+const UserBadgeItem = ({ user,admin,handleFunction}) => {
+  
   return (
     <Box
       px={2}
@@ -14,7 +14,7 @@ const UserBadgeItem = ({ handleFunction}) => {
       mb={2}
       variant="solid"
       fontSize={12}
-      colorScheme="gold"
+      backgroundColor="gold"
       color='white'
       cursor="pointer"
       onClick={handleFunction}

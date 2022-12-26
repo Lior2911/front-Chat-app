@@ -24,7 +24,7 @@ const GroupChatModal = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState()
   const [selectedUsers, setSelectedUsers] = useState([])
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState("")
   const [searchResults, setSearchResults] = useState([])
   const [loading, setLoading] = useState(false)
   const toast = useToast()
@@ -107,10 +107,10 @@ const GroupChatModal = ({ children }) => {
         position:"top"
       })
       return
-    }else{
-
-     return setSelectedUsers([...selectedUsers,userToAdd])
     }
+
+    setSelectedUsers([...selectedUsers,userToAdd])
+    
   }
   const handleDelete = (delUser)=>{
     setSelectedUsers(selectedUsers.filter(((sel)=>sel._id !== delUser._id)))
@@ -152,7 +152,7 @@ const GroupChatModal = ({ children }) => {
             bg="black"
             >
             {selectedUsers.map((u)=>(
-             <UserBadgeItem key={user._id} user={u} handleFunction={()=>handleDelete(u) }/>))}
+             <UserBadgeItem key={u._id} user={u} handleFunction={()=>handleDelete(u) }/>))}
             </Box>
             {loading?(<div>loading..</div>):(
               searchResults?.slice(0,4).map((user)=>(

@@ -2,7 +2,8 @@ import React from "react";
 import { ChatState } from "../../../contexts/ChatProvider";
 import {Avatar,Box,Text}from '@chakra-ui/react'
 
-const UserListItem = ({user,handleFunction }) => {
+const UserListItem = ({handleFunction }) => {
+  const {user} = ChatState()
   
 
   return (
@@ -17,6 +18,7 @@ const UserListItem = ({user,handleFunction }) => {
       w="100%"
       d="flex"
       alignItems="center"
+      backgroundColor="gray.400"
       color="black"
       px={3}
       py={2}
