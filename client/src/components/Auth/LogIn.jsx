@@ -16,8 +16,8 @@ import {useNavigate} from 'react-router-dom'
 const LogIn = () => {
   const toast = useToast()
   const [show, setShow] = useState(false);
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate()
 
@@ -51,15 +51,19 @@ const LogIn = () => {
         config
       );
       console.log(data);
-      toast({
-        title: "Login Successful",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom",
-      });
-      localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate('https://chat-ups.onrender.com/chats',{replace:true})
+      if(data){
+        toast({
+          title: "Login Successful",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "bottom",
+        });
+        localStorage.setItem("userInfo", JSON.stringify(data));
+        navigate('https://chat-ups.onrender.com/chats',{replace:true})
+      }
+      
+   
     
     
     } catch (error) {
