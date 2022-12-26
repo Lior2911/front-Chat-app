@@ -81,7 +81,7 @@ const SignUp = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false)
-      navigate('https://chat-ups.onrender.com/users/login')
+      navigate('https://chat-ups.onrender.com/chats')
     
     
     } catch (error) {
