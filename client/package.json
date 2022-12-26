@@ -1,7 +1,7 @@
 {
   "name": "mern-project",
   "version": "0.1.0",
-  "proxy": "https://backend-chatup.onrender.com/",
+  "proxy": "http://127.0.0.1:6000",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.14",
