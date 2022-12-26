@@ -59,7 +59,7 @@ const LogIn = () => {
         position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate('https://backend-chatup.onrender.com/chats')
+      navigate('/chats')
     
     
     } catch (error) {
