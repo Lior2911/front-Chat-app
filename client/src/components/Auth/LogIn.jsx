@@ -41,7 +41,7 @@ const LogIn = () => {
         },
       };
       const { data } = await axios.post(
-        "/login",
+        "users/login",
         {
       
           email,
