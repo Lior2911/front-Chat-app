@@ -41,7 +41,7 @@ const LogIn = () => {
         },
       };
       const { data } = await axios.post(
-        "https://backend-chatup.onrender.com/users/login",
+        "/users/login",
         {
       
           email,

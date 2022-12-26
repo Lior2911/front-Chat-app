@@ -65,7 +65,7 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`https://backend-chatup.onrender.com/users?search=${search}`, config);
+      const { data } = await axios.get(`/users?search=${search}`, config);
       setLoading(false);
       setSearchResult(data);
     } catch (error) {

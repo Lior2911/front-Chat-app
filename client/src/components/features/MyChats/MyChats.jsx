@@ -22,7 +22,7 @@ const MyChats = ({fetchAgain}) => {
         },
       };
 
-      const { data } = await axios.get("https://backend-chatup.onrender.com/chats", config);
+      const { data } = await axios.get("/chats", config);
       console.log(data);
       setChats(data);
     } catch (error) {

@@ -61,7 +61,7 @@ const SignUp = () => {
         },
       };
       const { data } = await axios.post(
-        "https://backend-chatup.onrender.com/users",
+        "/users",
         {
           name,
           email,
@@ -81,7 +81,7 @@ const SignUp = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false)
-      navigate('https://chat-ups.onrender.com/chats')
+      navigate('/chats')
     
     
     } catch (error) {
