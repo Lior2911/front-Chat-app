@@ -89,7 +89,7 @@ const SideDrawer = () => {
         },
       };
 
-      const { data } = await axios.post("https://backend-chatup.onrender.com/chats", { userId }, config);
+      const { data } = await axios.post("/chats", { userId }, config);
       if (!chats.find((c) => c._id == data._id)) {
         return setChats([data, ...chats]);
       }
