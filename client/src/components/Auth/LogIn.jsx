@@ -41,7 +41,7 @@ const LogIn = () => {
         },
       };
       const { data } = await axios.post(
-        "/users/login",
+        "https://chat-ups.onrender.com//users/login",
         {
       
           email,
@@ -59,7 +59,7 @@ const LogIn = () => {
         position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate('/chats')
+      navigate('https://chat-ups.onrender.com/chats')
     
     
     } catch (error) {
