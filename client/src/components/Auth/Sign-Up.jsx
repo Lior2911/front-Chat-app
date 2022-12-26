@@ -81,9 +81,7 @@ const SignUp = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false)
-      navigate('https://chat-ups.onrender.com/chats')
-    
-    
+      navigate('/chats')
     } catch (error) {
       toast({
         title: "Error Occurred!",
@@ -94,7 +92,6 @@ const SignUp = () => {
         position: "bottom",
       });
       setLoading(false)
-     
     }
   };
 
@@ -109,7 +106,6 @@ const SignUp = () => {
         position: "bottom",
       });
       return;
-
     }
     if(pics.type == 'image/jpeg'||pics.type == "image/png"){
       const data = new FormData()
@@ -124,7 +120,6 @@ const SignUp = () => {
       .then((data)=>{
         setPic(data.url.toString())
         setPicLoading(false)
-
       }).catch((err)=>{
         console.log(err);
         setPicLoading(false)
@@ -141,11 +136,9 @@ const SignUp = () => {
       setLoading(false)
       return
     }
-
-
   }
 
-    
+
   return (
     <>
     <VStack spacing="5px">
