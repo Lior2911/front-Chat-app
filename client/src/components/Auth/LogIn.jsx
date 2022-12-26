@@ -12,7 +12,8 @@ import React from "react";
 import { useState } from "react";
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-
+import ChatLoading from "../features/ChatLoading/ChatLoading";
+import Chats from '../pages/Chats/Chats'
 const LogIn = () => {
   const toast = useToast()
   const [show, setShow] = useState(false);
@@ -41,7 +42,7 @@ const LogIn = () => {
         },
       };
       const { data } = await axios.post(
-        "users/login",
+        "/login",
         {
       
           email,
@@ -51,19 +52,16 @@ const LogIn = () => {
         config
       );
       console.log(data);
-      if(data){
-        toast({
-          title: "Login Successful",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-          position: "bottom",
-        });
-        localStorage.setItem("userInfo", JSON.stringify(data));
-        navigate('https://chat-ups.onrender.com/chats',{replace:true})
-      }
       
-   
+      toast({
+        title: "Login Successful",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom",
+      });
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      navigate('https://chat-ups.onrender.com/chats',{replace:true})
     
     
     } catch (error) {
