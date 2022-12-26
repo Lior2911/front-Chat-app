@@ -84,6 +84,7 @@ const LogIn = () => {
         <FormLabel>Email</FormLabel>
         <Input
           placeholder="Enter Your Email"
+          id="emailLogIn"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -93,6 +94,7 @@ const LogIn = () => {
         <FormControl id="password">
           <FormLabel>password</FormLabel>
           <Input
+          id="passwordLogin"
             type={show ? "text" : "password"}
             placeholder="Enter Your password"
             onChange={(e) => {
