@@ -80,21 +80,21 @@ const LogIn = () => {
   return (
     <>
     <VStack spacing="5px">
-    <FormControl id="email">
+    <FormControl id="emailLogIn">
         <FormLabel>Email</FormLabel>
         <Input
           placeholder="Enter Your Email"
-          id="emailLogIn"
+         
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         />
       </FormControl>
       <InputGroup>
-        <FormControl id="password">
+        <FormControl id="passwordLogIn">
           <FormLabel>password</FormLabel>
           <Input
-          id="passwordLogin"
+  
             type={show ? "text" : "password"}
             placeholder="Enter Your password"
             onChange={(e) => {
