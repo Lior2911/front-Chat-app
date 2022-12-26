@@ -65,7 +65,7 @@ const SideDrawer = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get(`/users?search=${search}`, config);
+      const { data } = await axios.get(`https://backend-chatup.onrender.com/users?search=${search}`, config);
       setLoading(false);
       setSearchResult(data);
     } catch (error) {
@@ -89,7 +89,7 @@ const SideDrawer = () => {
         },
       };
 
-      const { data } = await axios.post("/chats", { userId }, config);
+      const { data } = await axios.post("https://backend-chatup.onrender.com/chats", { userId }, config);
       if (!chats.find((c) => c._id == data._id)) {
         return setChats([data, ...chats]);
       }
