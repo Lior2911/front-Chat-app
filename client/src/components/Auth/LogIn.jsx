@@ -59,7 +59,7 @@ const LogIn = () => {
         position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
-      navigate('https://chat-ups.onrender.com/chats')
+      navigate('https://chat-ups.onrender.com/chats',{replace:true})
     
     
     } catch (error) {
